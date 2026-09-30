@@ -16,7 +16,7 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="bg-grid-lines bg-primary-800 relative overflow-hidden lg:h-[1024px]">
+    <section className="bg-grid-lines bg-primary-800 relative overflow-hidden lg:h-256">
       {/* bottom lime circle   */}
       <div
         aria-hidden="true"
@@ -25,7 +25,7 @@ const Hero = () => {
         <div className="border-accent-500 absolute top-[582px] left-[145px] size-[1149px] rounded-full border-[320px]" />
       </div>
 
-      <div className="main-container relative flex flex-col items-center pt-40 pb-16 text-center lg:pt-[169px] lg:pb-0">
+      <div className="main-container relative flex flex-col items-center pt-40 pb-16 text-center lg:pt-42.25 lg:pb-0">
         <TextReveal>
           <h1 className="lg:text-heading-l max-w-[935px] text-[40px] leading-[1.2] tracking-[-0.01em] text-white sm:text-6xl">
             Get Access to Hundreds Courses Available
@@ -60,27 +60,21 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-[1440px] -translate-x-1/2 lg:block">
+      <div className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-360 -translate-x-1/2 lg:block">
         <RevealAnimation delay={0.5} offset={80}>
           <Image
             src={studentBoy}
             alt="Smiling student with headphones holding a laptop"
             priority
             sizes="578px"
-            className="drop-shadow-photo absolute top-[512px] left-[431px] h-[541px] w-[578px] max-w-none"
+            className="drop-shadow-photo absolute top-128 left-107.75 h-135.25 w-144.5 max-w-none"
           />
         </RevealAnimation>
         <RevealAnimation asChild={false} delay={0.8} direction="left" offset={40}>
-          <LearningProgressCard className="pointer-events-auto absolute top-[651px] left-[842px] h-[131px]" />
+          <LearningProgressCard className="pointer-events-auto absolute top-162.75 left-210.5 h-32.75" />
         </RevealAnimation>
-        <RevealAnimation
-          asChild={false}
-          delay={0.9}
-          direction="right"
-          offset={40}
-          className="pointer-events-auto absolute top-[837px] left-[328px]"
-        >
-          <HappyStudentsCard className="h-[121px]" />
+        <RevealAnimation asChild={false} delay={0.9} direction="right" offset={40}>
+          <HappyStudentsCard className="pointer-events-auto absolute top-209.25 left-82 h-30.25" />
         </RevealAnimation>
 
         <RevealAnimation delay={0.6} offset={40} blur={0}>
@@ -102,14 +96,13 @@ const Hero = () => {
           <Ornament src={springAWhite} x={1123.9} y={672} size={331.5} />
         </RevealAnimation>
 
-        <RevealAnimation
-          asChild={false}
-          delay={1}
-          direction="right"
-          offset={40}
-          className="pointer-events-auto absolute top-[639px] left-[404px]"
-        >
-          <CategoryStatCard title="UI/UX Design" courses={200} students={1000} />
+        <RevealAnimation asChild={false} delay={1} direction="right" offset={40}>
+          <CategoryStatCard
+            title="UI/UX Design"
+            courses={200}
+            students={1000}
+            className="pointer-events-auto absolute top-159.75 left-101"
+          />
         </RevealAnimation>
       </div>
     </section>

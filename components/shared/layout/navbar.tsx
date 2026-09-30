@@ -3,9 +3,9 @@
 import { ShoppingBagIcon } from '@/components/shared/icon';
 import MobileMenu from '@/components/shared/layout/mobile-menu';
 import Logo from '@/components/shared/logo';
+import RollLink from '@/components/shared/roll-link';
 import { authLinks, navItems } from '@/data/navbar';
 import { cn } from '@/utils/cn';
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export const isActivePath = (pathname: string, href: string) =>
@@ -27,30 +27,23 @@ const Navbar = () => {
             {navItems.map((item) => {
               const active = isActivePath(pathname, item.href);
               return (
-                <Link
+                <RollLink
                   key={item.label}
                   href={item.href}
                   aria-current={active ? 'page' : undefined}
-                  className={cn(
-                    'text-shuttle-50 text-base leading-6 transition-opacity hover:opacity-80',
-                    active && 'font-medium'
-                  )}
+                  className={cn('text-shuttle-50 text-base leading-6', active && 'font-medium')}
                 >
                   {item.label}
-                </Link>
+                </RollLink>
               );
             })}
           </nav>
 
           <div className="hidden items-center gap-6 lg:flex">
             {authLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-shuttle-50 text-base leading-6 transition-opacity hover:opacity-80"
-              >
+              <RollLink key={item.label} href={item.href} className="text-shuttle-50 text-base leading-6">
                 {item.label}
-              </Link>
+              </RollLink>
             ))}
             <button type="button" aria-label="Cart" className="text-shuttle-50 cursor-pointer">
               <ShoppingBagIcon />
