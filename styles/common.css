@@ -55,6 +55,75 @@
   }
 }
 
+/* Dot label: on parent hover a dot slides in from the left and the chars shift right to make
+   room (see DotLabel). Chars stagger from the last on hover, from the first on hover out. */
+.dot-label {
+  --dot-size: 6px;
+  --dot-gap: 8px;
+  /* half the dot + gap, so dot and text stay centred together */
+  --dot-shift: calc((var(--dot-size) + var(--dot-gap)) / 2);
+  --char-stagger: 0.02s;
+  --dot-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  display: inline-flex;
+}
+
+.dot-label__dot {
+  position: absolute;
+  top: 50%;
+  left: calc(-1 * (var(--dot-size) + var(--dot-gap)));
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0;
+  scale: 0;
+  translate: -16px -50%;
+  transition:
+    translate 0.5s var(--dot-ease),
+    scale 0.5s var(--dot-ease),
+    opacity 0.3s ease;
+}
+
+.dot-label__char {
+  display: inline-block;
+  white-space: pre;
+  transition: translate 0.5s var(--dot-ease) calc(var(--char) * var(--char-stagger));
+}
+
+:focus-visible > .dot-label .dot-label__dot {
+  opacity: 1;
+  scale: 1;
+  translate: var(--dot-shift) -50%;
+  transition-delay: 0.05s;
+}
+
+:focus-visible > .dot-label .dot-label__char {
+  translate: var(--dot-shift) 0;
+  transition-delay: calc((var(--char-count) - var(--char)) * var(--char-stagger));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :hover > .dot-label .dot-label__dot {
+    opacity: 1;
+    scale: 1;
+    translate: var(--dot-shift) -50%;
+    transition-delay: 0.05s;
+  }
+
+  :hover > .dot-label .dot-label__char {
+    translate: var(--dot-shift) 0;
+    transition-delay: calc((var(--char-count) - var(--char)) * var(--char-stagger));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot-label__dot,
+  .dot-label__char {
+    transition: none;
+  }
+}
+
 /* Roll link: label rolls up to a duplicate on hover, underline sweeps in (see RollLink) */
 .roll-link {
   --roll-gap: 10px;

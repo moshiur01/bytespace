@@ -6,17 +6,16 @@ import type { ReactNode } from 'react';
 interface AuthSplitProps {
   title: string;
   description: string;
-  /** Muted "(240)" rating tone on the showcase Happy Students card (login) */
+
   mutedRating?: boolean;
   children: ReactNode;
 }
 
-/** Two-column auth screen: intro + decorative showcase on the left, white form card on the right */
 const AuthSplit = ({ title, description, mutedRating, children }: AuthSplitProps) => {
   return (
     <div className="flex flex-col items-center gap-10 xl:flex-row xl:items-start xl:justify-between xl:gap-6">
       <div className="relative w-full max-w-[579px] xl:h-[784px] xl:max-w-none xl:flex-1">
-        <div className="text-shuttle-50 flex max-w-[475px] flex-col gap-4">
+        <div className="text-shuttle-50 max-w-[475px] space-y-4">
           <TextReveal>
             <h2 className="font-poppins text-heading-xs font-semibold">{title}</h2>
           </TextReveal>

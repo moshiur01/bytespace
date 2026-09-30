@@ -15,7 +15,6 @@ const RegisterForm = () => {
     setValues((prev) => ({ ...prev, [name]: value }));
   };
 
-  // UI only: no backend wired up yet
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
   };

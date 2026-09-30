@@ -8,16 +8,13 @@ import torusLime from '@/public/images/3d/torus-lime.png';
 import { cn } from '@/utils/cn';
 
 interface AuthShowcaseProps {
-  /** Rating "(240)" colour differs slightly between the login and register frames */
   mutedRating?: boolean;
   className?: string;
 }
 
-// Auth frames use 32px meta pills and 28/20px title lines on the course cards
 const cardTweaks =
   'absolute w-[373px] [&_h3]:leading-7 [&_h3+p]:leading-5 [&_li]:h-8 [&_li]:leading-5 [&_ul]:bottom-[13px]';
 
-/** Decorative 548x585 group of floating course cards and 3D shapes (Figma "Group 8") */
 const AuthShowcase = ({ mutedRating = true, className }: AuthShowcaseProps) => {
   const digitalAsset = getCourse('build-digital-asset');
   const bigData = getCourse('the-power-of-big-data');
@@ -47,7 +44,7 @@ const AuthShowcase = ({ mutedRating = true, className }: AuthShowcaseProps) => {
         starClassName="text-primary-800"
         countClassName="bg-shuttle-950 text-shuttle-50"
       />
-      {/* horizontally mirrored in Figma (scaleX -1) */}
+
       <Ornament src={springBWhite} x={373.8} y={321} size={175.8} className="-scale-x-100" />
       <Ornament src={torusLime} x={52.5} y={14.7} size={146.7} />
       <Ornament src={pyramidLime} x={-2} y={396.6} size={188.9} />

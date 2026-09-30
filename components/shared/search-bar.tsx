@@ -25,6 +25,7 @@ const SearchBar = ({ className, inputClassName }: SearchBarProps) => {
         <input
           type="search"
           name="q"
+          required
           placeholder="Course, topic, creator"
           className="text-body-l text-shuttle-950 placeholder:text-shuttle-400 w-full bg-transparent outline-none"
         />
