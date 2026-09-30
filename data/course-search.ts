@@ -54,20 +54,21 @@ export const sortOptions: SortOption[] = [
 
 export const searchScopes = ['Courses', 'Creators'] as const;
 
-export const COURSES_PER_PAGE = 18;
+export const COURSES_PER_PAGE = 9;
+
+const TOTAL_COURSES = 90;
+/** The first 18 results mirror the design: the six demo courses three times, all Beginner */
+const DESIGN_COURSES = 18;
 
 const topicCategories = searchCategories.slice(1);
 const extraLevels: CourseLevel[] = ['Beginner', 'Intermediate', 'Advanced'];
 
-/**
- * 5 pages x 18 results. The first page mirrors the design (the six demo
- * courses three times, all Beginner); later pages vary level and rating.
- */
+/** 90 results; after the design set, later results vary level and rating. */
 export const searchCourses: SearchCourse[] = Array.from(
-  { length: COURSES_PER_PAGE * 5 },
+  { length: TOTAL_COURSES },
   (_, i) => {
     const course = courses[i % courses.length];
-    const firstPage = i < COURSES_PER_PAGE;
+    const firstPage = i < DESIGN_COURSES;
     return {
       ...course,
       id: `${course.slug}-${i}`,

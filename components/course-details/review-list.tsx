@@ -27,37 +27,35 @@ const ReviewList = () => {
 
   return (
     <>
-      <div
-        role="group"
-        aria-label="Filter reviews by rating"
-        className="flex flex-wrap items-start gap-4"
-      >
-        <button
-          type="button"
-          aria-pressed={filter === null}
-          onClick={() => setFilter(null)}
-          className={pillClass(filter === null)}
-        >
-          All rating
-        </button>
-        {reviewFilters.map((stars) => (
+      <RevealAnimation delay={0.3}>
+        <div aria-label="Filter reviews by rating" className="flex flex-wrap items-start gap-4">
           <button
-            key={stars}
             type="button"
-            aria-pressed={filter === stars}
-            aria-label={`${stars} star reviews`}
-            onClick={() => setFilter(stars)}
-            className={cn(pillClass(filter === stars), 'h-12')}
+            aria-pressed={filter === null}
+            onClick={() => setFilter(null)}
+            className={pillClass(filter === null)}
           >
-            <StarFilledIcon />
-            {stars}
+            All rating
           </button>
-        ))}
-      </div>
+          {reviewFilters.map((stars) => (
+            <button
+              key={stars}
+              type="button"
+              aria-pressed={filter === stars}
+              aria-label={`${stars} star reviews`}
+              onClick={() => setFilter(stars)}
+              className={cn(pillClass(filter === stars), 'h-12')}
+            >
+              <StarFilledIcon />
+              {stars}
+            </button>
+          ))}
+        </div>
+      </RevealAnimation>
 
       {reviews.length > 0 ? (
         reviews.map((review, index) => (
-          <RevealAnimation key={review.name} delay={(index % 2) * 0.1}>
+          <RevealAnimation key={review.name} delay={(index % 2) * 0.2}>
             <div>
               <ReviewCard review={review} />
             </div>

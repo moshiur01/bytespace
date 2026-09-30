@@ -2,7 +2,6 @@
 
 import { type RefObject, useEffect } from 'react';
 
-/** Close a popover on outside pointer-down or Escape */
 const useDismiss = (ref: RefObject<HTMLElement | null>, open: boolean, onClose: () => void) => {
   useEffect(() => {
     if (!open) return;

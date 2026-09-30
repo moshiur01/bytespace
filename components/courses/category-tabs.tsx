@@ -9,7 +9,6 @@ interface CategoryTabsProps {
 const CategoryTabs = ({ active, onChange }: CategoryTabsProps) => {
   return (
     <div
-      role="group"
       aria-label="Categories"
       className="-mx-5 flex [scrollbar-width:none] gap-4 overflow-x-auto px-5 lg:mx-0 lg:justify-between lg:overflow-visible lg:px-0"
     >

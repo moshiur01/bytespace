@@ -9,7 +9,9 @@ const ReviewsTab = () => {
       <TextReveal>
         <h2 className="text-heading-xs">What Learners Are Saying</h2>
       </TextReveal>
-      <p className="text-body-m text-shuttle-700 leading-[26px]">{reviewsIntro}</p>
+      <TextReveal delay={0.2}>
+        <p className="text-body-m text-shuttle-700 leading-[26px]">{reviewsIntro}</p>
+      </TextReveal>
       <RatingSummary />
 
       <TextReveal>
