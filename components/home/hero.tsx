@@ -25,38 +25,41 @@ const Hero = () => {
         <div className="border-accent-500 absolute top-[582px] left-[145px] size-[1149px] rounded-full border-[320px]" />
       </div>
 
-      <div className="main-container relative flex flex-col items-center pt-40 pb-16 text-center lg:pt-42.25 lg:pb-0">
-        <TextReveal>
-          <h1 className="lg:text-heading-l max-w-[935px] text-[40px] leading-[1.2] tracking-[-0.01em] text-white sm:text-6xl">
-            Get Access to Hundreds Courses Available
-          </h1>
-        </TextReveal>
-        <RevealAnimation delay={0.3}>
-          <p className="text-body-m text-shuttle-100 sm:text-body-l mt-8 max-w-[819px]">
-            Unlock your creativity, gain valuable knowledge, and grow your business with our wide
-            range of courses.
-          </p>
-        </RevealAnimation>
-        <RevealAnimation asChild={false} delay={0.45} className="mt-[60px] w-full max-w-[581px]">
-          <SearchBar />
-        </RevealAnimation>
-
-        <div className="relative mt-12 w-full max-w-[578px] text-left lg:hidden">
-          <Image
-            src={studentBoy}
-            alt="Smiling student with headphones holding a laptop"
-            priority
-            sizes="(min-width: 640px) 578px, 100vw"
-            className="drop-shadow-photo w-full"
-          />
-          <CategoryStatCard
-            title="UI/UX Design"
-            courses={200}
-            students={1000}
-            className="absolute top-[22%] left-0 origin-top-left scale-[0.65] sm:scale-90"
-          />
-          <LearningProgressCard className="absolute top-[26%] right-0 origin-top-right scale-[0.65] sm:scale-90" />
-          <HappyStudentsCard className="absolute bottom-[6%] left-0 origin-bottom-left scale-[0.65] sm:scale-90" />
+      <div className="main-container">
+        <div className="space-y-15 pt-40 pb-16 text-center lg:pt-42.25 lg:pb-0">
+          <div className="space-y-8 text-center">
+            <TextReveal>
+              <h1 className="lg:text-heading-l mx-auto max-w-[935px] text-[40px] leading-[1.2] tracking-[-0.01em] text-white sm:text-6xl">
+                Get Access to Hundreds Courses Available
+              </h1>
+            </TextReveal>
+            <RevealAnimation delay={0.3}>
+              <p className="text-body-m text-shuttle-100 sm:text-body-l mx-auto max-w-[819px]">
+                Unlock your creativity, gain valuable knowledge, and grow your business with our
+                wide range of courses.
+              </p>
+            </RevealAnimation>
+          </div>
+          <RevealAnimation asChild={false} delay={0.45} className="mx-auto w-full max-w-[581px]">
+            <SearchBar />
+          </RevealAnimation>
+          <div className="relative mt-12 w-full max-w-[578px] text-left lg:hidden">
+            <Image
+              src={studentBoy}
+              alt="Smiling student with headphones holding a laptop"
+              priority
+              sizes="(min-width: 640px) 578px, 100vw"
+              className="drop-shadow-photo w-full"
+            />
+            <CategoryStatCard
+              title="UI/UX Design"
+              courses={200}
+              students={1000}
+              className="absolute top-[22%] left-0 origin-top-left scale-[0.65] sm:scale-90"
+            />
+            <LearningProgressCard className="absolute top-[26%] right-0 origin-top-right scale-[0.65] sm:scale-90" />
+            <HappyStudentsCard className="absolute bottom-[6%] left-0 origin-bottom-left scale-[0.65] sm:scale-90" />
+          </div>
         </div>
       </div>
 
