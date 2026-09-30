@@ -1,6 +1,3 @@
-/* =========================
-Default Body and Typography styles
-=========================== */
 body {
   @apply font-satoshi text-shuttle-950 antialiased;
 }

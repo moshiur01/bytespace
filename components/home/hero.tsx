@@ -17,12 +17,11 @@ import Image from 'next/image';
 const Hero = () => {
   return (
     <section className="bg-grid-lines bg-primary-800 relative overflow-hidden lg:h-[1024px]">
-      {/* 1440 artboard: decorative layer below the copy */}
+      {/* bottom lime circle   */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-[1440px] -translate-x-1/2 lg:block"
       >
-        {/* 1149px circle with a 320px inside stroke */}
         <div className="border-accent-500 absolute top-[582px] left-[145px] size-[1149px] rounded-full border-[320px]" />
       </div>
 
@@ -42,7 +41,6 @@ const Hero = () => {
           <SearchBar />
         </RevealAnimation>
 
-        {/* below lg: photo with the three cards floating over it */}
         <div className="relative mt-12 w-full max-w-[578px] text-left lg:hidden">
           <Image
             src={studentBoy}
@@ -62,9 +60,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 1440 artboard: photo, floating cards and 3D shapes */}
       <div className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-[1440px] -translate-x-1/2 lg:block">
-        <RevealAnimation delay={0.5} offset={80} blur={0}>
+        <RevealAnimation delay={0.5} offset={80}>
           <Image
             src={studentBoy}
             alt="Smiling student with headphones holding a laptop"
@@ -73,21 +70,15 @@ const Hero = () => {
             className="drop-shadow-photo absolute top-[512px] left-[431px] h-[541px] w-[578px] max-w-none"
           />
         </RevealAnimation>
-        <RevealAnimation
-          asChild={false}
-          delay={0.8}
-          direction="left"
-          offset={40}
-          className="absolute top-[651px] left-[842px]"
-        >
-          <LearningProgressCard className="h-[131px]" />
+        <RevealAnimation asChild={false} delay={0.8} direction="left" offset={40}>
+          <LearningProgressCard className="pointer-events-auto absolute top-[651px] left-[842px] h-[131px]" />
         </RevealAnimation>
         <RevealAnimation
           asChild={false}
           delay={0.9}
           direction="right"
           offset={40}
-          className="absolute top-[837px] left-[328px]"
+          className="pointer-events-auto absolute top-[837px] left-[328px]"
         >
           <HappyStudentsCard className="h-[121px]" />
         </RevealAnimation>
@@ -116,7 +107,7 @@ const Hero = () => {
           delay={1}
           direction="right"
           offset={40}
-          className="absolute top-[639px] left-[404px]"
+          className="pointer-events-auto absolute top-[639px] left-[404px]"
         >
           <CategoryStatCard title="UI/UX Design" courses={200} students={1000} />
         </RevealAnimation>

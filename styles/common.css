@@ -21,22 +21,18 @@
   padding-bottom: 0.12em;
 }
 
-/* 1200px content column (120px gutters at the 1440 design width) */
 @utility main-container {
   @apply mx-auto w-full max-w-[1240px] px-5;
 }
 
-/* Hero / CTA background grid: 120px squares of 2px white lines at 10% */
 @utility bg-grid-lines {
   background-image:
     linear-gradient(to right, rgb(255 255 255 / 0.1) 2px, transparent 2px),
     linear-gradient(to bottom, rgb(255 255 255 / 0.1) 2px, transparent 2px);
   background-size: 120px 120px;
-  /* keep a vertical line on the page centre, like the 1440 artboard */
   background-position: calc(50% + 59px) -1px;
 }
 
-/* Figma's 8-layer photo shadow, cast by the cut-out (alpha) of the photo */
 @utility drop-shadow-photo {
   filter: drop-shadow(2px 3px 5px rgb(0 0 0 / 0.08)) drop-shadow(10px 15px 16px rgb(0 0 0 / 0.08))
     drop-shadow(35px 50px 50px rgb(0 0 0 / 0.16));
