@@ -1,4 +1,4 @@
-# ByteSpace — Next.js
+# ByteSpace — Doin tech Jr Software Engineer task
 
 # Live link
 
