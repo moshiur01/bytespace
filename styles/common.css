@@ -43,8 +43,14 @@
   --roll-gap: 10px;
   --roll-duration: 0.6s;
   --roll-ease: cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
   display: inline-flex;
+  align-items: center;
+}
+
+/* Anchors the underline to the text, whatever the link's height */
+.roll-link__inner {
+  position: relative;
+  display: block;
 }
 
 .roll-link__clip {
