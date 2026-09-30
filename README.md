@@ -1,8 +1,5 @@
 # ByteSpace — Next.js
 
-Pixel-perfect Next.js conversion of the **ByteSpace** Figma design (online-courses marketplace).
-Built with the same structure and conventions as `saas-ns-next` (App Router, no `src/`, Tailwind v4 tokens, one component per file, data in `data/`).
-
 ## Stack
 
 - Next.js 16 (App Router) + React 19 + TypeScript
@@ -20,17 +17,17 @@ bun run start
 
 ## Routes
 
-| Route                       | Figma frame      |
-| --------------------------- | ---------------- |
-| `/`                         | Home             |
-| `/courses`                  | Search Page      |
-| `/courses/[slug]`           | Course Details   |
-| `/courses/[slug]/lessons`   | Course Lessons   |
-| `/courses/[slug]/reviews`   | Course Reviews   |
-| `/creators/[slug]`          | Creator Profile  |
-| `/login`                    | Login            |
-| `/register`                 | Register         |
-| any unknown URL             | 404 Not Found    |
+| Route                     | Figma frame     |
+| ------------------------- | --------------- |
+| `/`                       | Home            |
+| `/courses`                | Search Page     |
+| `/courses/[slug]`         | Course Details  |
+| `/courses/[slug]/lessons` | Course Lessons  |
+| `/courses/[slug]/reviews` | Course Reviews  |
+| `/creators/[slug]`        | Creator Profile |
+| `/login`                  | Login           |
+| `/register`               | Register        |
+| any unknown URL           | 404 Not Found   |
 
 ## Structure
 
@@ -47,8 +44,3 @@ interface/         shared TypeScript types
 styles/            tokens (variable.css), typography, utilities
 public/images/     photos, avatars, pre-tinted 3D shapes
 ```
-
-## Notes
-
-- The 3D shapes in the design are tinted in Figma with a hard-light colour layer masked by the image; they are pre-baked as `public/images/3d/*-lime.png` / `*-white.png` so they render identically without blend-mode tricks.
-- Decorative artwork (3D shapes, floating cards) is positioned on a centred 1440px "artboard" layer at desktop sizes and hidden on small screens.
