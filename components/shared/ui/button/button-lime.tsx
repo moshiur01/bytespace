@@ -1,3 +1,4 @@
+import DotLabel from '@/components/shared/dot-label';
 import { cn } from '@/utils/cn';
 import Link from 'next/link';
 import type { ComponentProps, ReactNode } from 'react';
@@ -21,17 +22,18 @@ type ButtonLimeProps = { size?: Size; className?: string; children: ReactNode } 
 
 const ButtonLime = ({ size = 'lg', className, children, ...props }: ButtonLimeProps) => {
   const classes = cn(base, sizes[size], className);
+  const content = typeof children === 'string' ? <DotLabel text={children} /> : children;
   if (props.href !== undefined) {
     return (
       <Link {...props} className={classes}>
-        {children}
+        {content}
       </Link>
     );
   }
   const { type = 'button', ...rest } = props as ComponentProps<'button'>;
   return (
     <button type={type} {...rest} className={classes}>
-      {children}
+      {content}
     </button>
   );
 };
