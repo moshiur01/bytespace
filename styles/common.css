@@ -21,25 +21,119 @@
   padding-bottom: 0.12em;
 }
 
-/* 1200px content column (120px gutters at the 1440 design width) */
 @utility main-container {
   @apply mx-auto w-full max-w-[1240px] px-5;
 }
 
-/* Hero / CTA background grid: 120px squares of 2px white lines at 10% */
 @utility bg-grid-lines {
   background-image:
     linear-gradient(to right, rgb(255 255 255 / 0.1) 2px, transparent 2px),
     linear-gradient(to bottom, rgb(255 255 255 / 0.1) 2px, transparent 2px);
   background-size: 120px 120px;
-  /* keep a vertical line on the page centre, like the 1440 artboard */
   background-position: calc(50% + 59px) -1px;
 }
 
-/* Figma's 8-layer photo shadow, cast by the cut-out (alpha) of the photo */
 @utility drop-shadow-photo {
   filter: drop-shadow(2px 3px 5px rgb(0 0 0 / 0.08)) drop-shadow(10px 15px 16px rgb(0 0 0 / 0.08))
     drop-shadow(35px 50px 50px rgb(0 0 0 / 0.16));
+}
+
+/* Underline sweeps in from the left on hover, out to the right on leave (inline elements) */
+@utility hover-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 0% 1px;
+  transition:
+    background-size 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-position: left bottom;
+    background-size: 100% 1px;
+  }
+}
+
+/* Roll link: label rolls up to a duplicate on hover, underline sweeps in (see RollLink) */
+.roll-link {
+  --roll-gap: 10px;
+  --roll-duration: 0.6s;
+  --roll-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Anchors the underline to the text, whatever the link's height */
+.roll-link__inner {
+  position: relative;
+  display: block;
+}
+
+.roll-link__clip {
+  display: block;
+  height: 1lh;
+  overflow: clip;
+}
+
+.roll-link__track {
+  display: flex;
+  flex-direction: column;
+  gap: var(--roll-gap);
+  transition: transform var(--roll-duration) var(--roll-ease);
+  will-change: transform;
+}
+
+.roll-link__text {
+  display: block;
+  white-space: nowrap;
+  transition:
+    rotate var(--roll-duration) var(--roll-ease),
+    scale var(--roll-duration) var(--roll-ease);
+  backface-visibility: hidden;
+}
+
+.roll-link__text + .roll-link__text {
+  scale: 0.98;
+}
+
+.roll-link__line {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--roll-duration) var(--roll-ease);
+}
+
+.roll-link[aria-current='page'] .roll-link__line,
+.roll-link:is(:hover, :focus-visible) .roll-link__line {
+  transform: scaleX(1);
+}
+
+.roll-link:is(:hover, :focus-visible) .roll-link__line {
+  transform-origin: left;
+}
+
+.roll-link:is(:hover, :focus-visible) .roll-link__track {
+  transform: translateY(calc(-1lh - var(--roll-gap)));
+}
+
+.roll-link:is(:hover, :focus-visible) .roll-link__text:first-child {
+  rotate: -1deg;
+  scale: 0.98;
+}
+
+.roll-link:is(:hover, :focus-visible) .roll-link__text + .roll-link__text {
+  scale: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roll-link * {
+    transition: none !important;
+  }
 }
 
 .scroll-bar::-webkit-scrollbar {

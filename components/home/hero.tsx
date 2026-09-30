@@ -16,80 +16,68 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className="bg-grid-lines bg-primary-800 relative overflow-hidden lg:h-[1024px]">
-      {/* 1440 artboard: decorative layer below the copy */}
+    <section className="bg-grid-lines bg-primary-800 relative overflow-hidden lg:h-256">
+      {/* bottom lime circle   */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-[1440px] -translate-x-1/2 lg:block"
       >
-        {/* 1149px circle with a 320px inside stroke */}
         <div className="border-accent-500 absolute top-[582px] left-[145px] size-[1149px] rounded-full border-[320px]" />
       </div>
 
-      <div className="main-container relative flex flex-col items-center pt-40 pb-16 text-center lg:pt-[169px] lg:pb-0">
-        <TextReveal>
-          <h1 className="lg:text-heading-l max-w-[935px] text-[40px] leading-[1.2] tracking-[-0.01em] text-white sm:text-6xl">
-            Get Access to Hundreds Courses Available
-          </h1>
-        </TextReveal>
-        <RevealAnimation delay={0.3}>
-          <p className="text-body-m text-shuttle-100 sm:text-body-l mt-8 max-w-[819px]">
-            Unlock your creativity, gain valuable knowledge, and grow your business with our wide
-            range of courses.
-          </p>
-        </RevealAnimation>
-        <RevealAnimation asChild={false} delay={0.45} className="mt-[60px] w-full max-w-[581px]">
-          <SearchBar />
-        </RevealAnimation>
-
-        {/* below lg: photo with the three cards floating over it */}
-        <div className="relative mt-12 w-full max-w-[578px] text-left lg:hidden">
-          <Image
-            src={studentBoy}
-            alt="Smiling student with headphones holding a laptop"
-            priority
-            sizes="(min-width: 640px) 578px, 100vw"
-            className="drop-shadow-photo w-full"
-          />
-          <CategoryStatCard
-            title="UI/UX Design"
-            courses={200}
-            students={1000}
-            className="absolute top-[22%] left-0 origin-top-left scale-[0.65] sm:scale-90"
-          />
-          <LearningProgressCard className="absolute top-[26%] right-0 origin-top-right scale-[0.65] sm:scale-90" />
-          <HappyStudentsCard className="absolute bottom-[6%] left-0 origin-bottom-left scale-[0.65] sm:scale-90" />
+      <div className="main-container">
+        <div className="space-y-15 pt-40 pb-16 text-center lg:pt-42.25 lg:pb-0">
+          <div className="space-y-8 text-center">
+            <TextReveal>
+              <h1 className="lg:text-heading-l mx-auto max-w-[935px] text-[40px] leading-[1.2] tracking-[-0.01em] text-white sm:text-6xl">
+                Get Access to Hundreds Courses Available
+              </h1>
+            </TextReveal>
+            <RevealAnimation delay={0.3}>
+              <p className="text-body-m text-shuttle-100 sm:text-body-l mx-auto max-w-[819px]">
+                Unlock your creativity, gain valuable knowledge, and grow your business with our
+                wide range of courses.
+              </p>
+            </RevealAnimation>
+          </div>
+          <RevealAnimation asChild={false} delay={0.45} className="mx-auto w-full max-w-[581px]">
+            <SearchBar />
+          </RevealAnimation>
+          <div className="relative mt-12 w-full max-w-[578px] text-left lg:hidden">
+            <Image
+              src={studentBoy}
+              alt="Smiling student with headphones holding a laptop"
+              priority
+              sizes="(min-width: 640px) 578px, 100vw"
+              className="drop-shadow-photo w-full"
+            />
+            <CategoryStatCard
+              title="UI/UX Design"
+              courses={200}
+              students={1000}
+              className="absolute top-[22%] left-0 origin-top-left scale-[0.65] sm:scale-90"
+            />
+            <LearningProgressCard className="absolute top-[26%] right-0 origin-top-right scale-[0.65] sm:scale-90" />
+            <HappyStudentsCard className="absolute bottom-[6%] left-0 origin-bottom-left scale-[0.65] sm:scale-90" />
+          </div>
         </div>
       </div>
 
-      {/* 1440 artboard: photo, floating cards and 3D shapes */}
-      <div className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-[1440px] -translate-x-1/2 lg:block">
-        <RevealAnimation delay={0.5} offset={80} blur={0}>
+      <div className="pointer-events-none absolute top-0 left-1/2 hidden h-full w-360 -translate-x-1/2 lg:block">
+        <RevealAnimation delay={0.5} offset={80}>
           <Image
             src={studentBoy}
             alt="Smiling student with headphones holding a laptop"
             priority
             sizes="578px"
-            className="drop-shadow-photo absolute top-[512px] left-[431px] h-[541px] w-[578px] max-w-none"
+            className="drop-shadow-photo absolute top-128 left-107.75 h-135.25 w-144.5 max-w-none"
           />
         </RevealAnimation>
-        <RevealAnimation
-          asChild={false}
-          delay={0.8}
-          direction="left"
-          offset={40}
-          className="absolute top-[651px] left-[842px]"
-        >
-          <LearningProgressCard className="h-[131px]" />
+        <RevealAnimation asChild={false} delay={0.8} direction="left" offset={40}>
+          <LearningProgressCard className="pointer-events-auto absolute top-162.75 left-210.5 h-32.75" />
         </RevealAnimation>
-        <RevealAnimation
-          asChild={false}
-          delay={0.9}
-          direction="right"
-          offset={40}
-          className="absolute top-[837px] left-[328px]"
-        >
-          <HappyStudentsCard className="h-[121px]" />
+        <RevealAnimation asChild={false} delay={0.9} direction="right" offset={40}>
+          <HappyStudentsCard className="pointer-events-auto absolute top-209.25 left-82 h-30.25" />
         </RevealAnimation>
 
         <RevealAnimation delay={0.6} offset={40} blur={0}>
@@ -111,14 +99,13 @@ const Hero = () => {
           <Ornament src={springAWhite} x={1123.9} y={672} size={331.5} />
         </RevealAnimation>
 
-        <RevealAnimation
-          asChild={false}
-          delay={1}
-          direction="right"
-          offset={40}
-          className="absolute top-[639px] left-[404px]"
-        >
-          <CategoryStatCard title="UI/UX Design" courses={200} students={1000} />
+        <RevealAnimation asChild={false} delay={1} direction="right" offset={40}>
+          <CategoryStatCard
+            title="UI/UX Design"
+            courses={200}
+            students={1000}
+            className="pointer-events-auto absolute top-159.75 left-101"
+          />
         </RevealAnimation>
       </div>
     </section>

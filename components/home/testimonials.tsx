@@ -1,5 +1,5 @@
-import TextReveal from '@/components/animation/text-reveal';
 import RevealAnimation from '@/components/animation/reveal-animation';
+import TextReveal from '@/components/animation/text-reveal';
 import Glow from '@/components/shared/glow';
 import { testimonials } from '@/data/testimonials';
 import Image from 'next/image';

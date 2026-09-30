@@ -20,16 +20,11 @@ const SectionHeading = ({
   className,
 }: SectionHeadingProps) => {
   return (
-    <div
-      className={cn(
-        'mx-auto flex max-w-[917px] flex-col items-center gap-4 text-center',
-        className
-      )}
-    >
+    <div className={cn('mx-auto max-w-229.25 space-y-4 text-center', className)}>
       <TextReveal>
         <h2
           className={cn(
-            'text-vulcan-950 text-[28px] leading-[1.2] tracking-[-0.01em]',
+            'text-vulcan-950 mx-auto text-[28px] leading-[1.2] tracking-[-0.01em]',
             size === 'm' ? 'sm:text-heading-m' : 'sm:text-heading-s',
             titleClassName
           )}

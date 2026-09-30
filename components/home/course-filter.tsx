@@ -1,15 +1,15 @@
 'use client';
 
 import RevealAnimation from '@/components/animation/reveal-animation';
+import RollLink from '@/components/shared/roll-link';
 import TopicPill from '@/components/shared/ui/badge/topic-pill';
 import CourseCard from '@/components/shared/ui/cards/course-card';
-import { topicRows } from '@/data/categories';
+import { topics } from '@/data/categories';
 import { courses } from '@/data/courses';
-import Link from 'next/link';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useState } from 'react';
 
-const FEATURED = topicRows[0][0];
+const FEATURED = topics[0];
 
 /** Topic pills that filter the course grid below them */
 const CourseFilter = () => {
@@ -30,28 +30,21 @@ const CourseFilter = () => {
   };
 
   return (
-    <>
-      <div className="mt-[42px] flex flex-wrap justify-center gap-x-4 gap-y-[21px] lg:flex-col lg:items-center">
-        {topicRows.map((row, rowIndex) => (
-          <div key={rowIndex} className="contents lg:flex lg:items-center lg:gap-4">
-            {row.map((topic) => (
-              <TopicPill key={topic} active={active === topic} onClick={() => select(topic)}>
-                {topic}
-              </TopicPill>
-            ))}
-            {rowIndex === topicRows.length - 1 && (
-              <Link
-                href="/courses"
-                className="text-label-m text-primary-800 flex h-[43px] items-center font-medium hover:underline"
-              >
-                + More
-              </Link>
-            )}
-          </div>
-        ))}
-      </div>
+    <div className="space-y-19.25">
+      <RevealAnimation delay={0.3}>
+        <div className="mx-auto flex max-w-271.5 flex-wrap justify-center gap-x-4 gap-y-5.25">
+          {topics.map((topic) => (
+            <TopicPill key={topic} active={active === topic} onClick={() => select(topic)}>
+              {topic}
+            </TopicPill>
+          ))}
+          <RollLink href="/courses" className="text-label-m text-primary-800 h-10.75 font-medium">
+            + More
+          </RollLink>
+        </div>
+      </RevealAnimation>
 
-      <div key={active} className="mt-[77px] grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <div key={active} className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {visible.map((course, index) => (
           <RevealAnimation
             key={course.slug}
@@ -64,7 +57,7 @@ const CourseFilter = () => {
           </RevealAnimation>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

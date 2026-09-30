@@ -9,7 +9,6 @@ import { type ComponentPropsWithoutRef, type ReactElement, useRef } from 'react'
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 interface RevealAnimationProps extends Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
-  /** Render the child element itself (Slot behaviour). Set false to wrap in a div. */
   asChild?: boolean;
   children: ReactElement | ReactElement[];
   duration?: number;
@@ -24,7 +23,6 @@ interface RevealAnimationProps extends Omit<ComponentPropsWithoutRef<'div'>, 'ch
   blur?: number;
 }
 
-/** Fade + blur + slide in on scroll. */
 const RevealAnimation = ({
   asChild = true,
   children,
