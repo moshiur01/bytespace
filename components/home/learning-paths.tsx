@@ -20,9 +20,9 @@ const LearningPaths = () => {
                 <li>
                   <Link
                     href="/courses"
-                    className="ring-shuttle-200 can-hover:hover:bg-shuttle-50 flex aspect-square flex-col items-center justify-center gap-3 rounded-3xl ring-1 transition-colors ring-inset lg:h-[167px]"
+                    className="ring-shuttle-200 can-hover:hover:bg-shuttle-50 flex aspect-square flex-col items-center justify-center gap-3 rounded-3xl ring-1 transition-colors ring-inset lg:h-41.75"
                   >
-                    <span className="bg-accent-400 text-shuttle-950 flex size-[60px] items-center justify-center rounded-[40px]">
+                    <span className="bg-accent-400 text-shuttle-950 flex size-15 items-center justify-center rounded-[40px]">
                       <Icon size={36} />
                     </span>
                     <span className="text-label-xl text-shuttle-950 font-medium">{label}</span>
