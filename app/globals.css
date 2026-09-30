@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+@custom-variant can-hover (@media (hover: hover) and (pointer: fine));
+@import '../styles/common';
+@import '../styles/typography';
+@import '../styles/variable';
