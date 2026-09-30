@@ -6,9 +6,7 @@ import type { ComponentProps, ReactNode } from 'react';
 type Size = 'md' | 'lg';
 
 const sizes: Record<Size, string> = {
-  // 40px tall — Label M
   md: 'h-10 px-6 text-label-m',
-  // 46px tall — Label L
   lg: 'h-[46px] px-6 text-label-l',
 };
 
