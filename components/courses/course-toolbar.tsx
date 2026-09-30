@@ -24,7 +24,6 @@ interface CourseToolbarProps {
   onLevelChange: (value: LevelValue) => void;
   onCategoryChange: (value: string) => void;
   onSortChange: (value: SortOption['value']) => void;
-  /** shows the Reset pill when true */
   canReset: boolean;
   onReset: () => void;
 }

@@ -21,10 +21,10 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
     >
       <div className="flex flex-col gap-6">
         {/* Lessons preview */}
-        <div className="flex flex-col gap-6">
+        <div className="space-y-6">
           <h2 className="text-heading-xs">{courseOverview.lessonsSummary}</h2>
-          <div className="flex flex-col gap-3">
-            <ol className="flex flex-col gap-3">
+          <div className="space-y-3">
+            <ol className="space-y-3">
               {previewLessons.map((lesson) => (
                 <li key={lesson.number} className="flex items-start justify-between gap-4">
                   <span className="text-label-m text-shuttle-950 flex gap-2 leading-[19px] font-medium">
@@ -44,7 +44,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
         </div>
 
         {/* Price + enroll */}
-        <div className="flex flex-col gap-6">
+        <div className="space-y-6">
           <p className="text-body-m text-shuttle-700 leading-[26px]">{courseOverview.enrollText}</p>
           <p className="flex items-end">
             <span className="font-poppins text-heading-s text-primary-800 block h-[38px] font-semibold">
@@ -61,7 +61,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
 
         {/* Includes */}
         <h2 className="text-heading-xs">This course include</h2>
-        <ul className="flex flex-col gap-3">
+        <ul className="space-y-3">
           {courseIncludes.map(({ icon: Icon, label }) => (
             <li key={label} className="text-body-m text-shuttle-700 flex gap-2 leading-[26px]">
               <Icon className="text-primary-800 shrink-0" />
@@ -73,7 +73,7 @@ const CourseSidebar = ({ course }: CourseSidebarProps) => {
         <hr className="-mb-px border-neutral-200" />
 
         {/* Creator */}
-        <div className="flex flex-col items-start gap-6">
+        <div className="space-y-6">
           <div className="flex items-start gap-3">
             <Image
               src={courseCreator.avatar}

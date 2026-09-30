@@ -1,7 +1,7 @@
 'use client';
 
-import { CheckCircleIcon } from '@/components/shared/icon';
 import useDismiss from '@/components/courses/use-dismiss';
+import { CheckCircleIcon } from '@/components/shared/icon';
 import { cn } from '@/utils/cn';
 import { type ReactNode, useCallback, useId, useRef, useState } from 'react';
 
@@ -11,12 +11,10 @@ interface DropdownOption<T extends string> {
 }
 
 interface DropdownMenuProps<T extends string> {
-  /** Accessible name of the listbox, e.g. "Sort courses" */
   label: string;
   options: DropdownOption<T>[];
   value: T;
   onChange: (value: T) => void;
-  /** Renders the trigger contents */
   trigger: ReactNode;
   triggerClassName?: string;
   align?: 'left' | 'right';

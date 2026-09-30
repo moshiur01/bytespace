@@ -9,7 +9,6 @@ type Scope = (typeof searchScopes)[number];
 
 const options = searchScopes.map((scope) => ({ value: scope, label: scope }));
 
-/** Lime "Courses ⌄" pill next to the search field: picks what the search looks in */
 const ScopeSelect = () => {
   const [scope, setScope] = useState<Scope>(searchScopes[0]);
 
