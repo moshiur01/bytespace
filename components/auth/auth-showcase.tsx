@@ -1,10 +1,12 @@
 import Ornament from '@/components/shared/ornament';
 import CourseCard from '@/components/shared/ui/cards/course-card';
 import HappyStudentsCard from '@/components/shared/ui/cards/happy-students-card';
-import { getCourse } from '@/data/courses';
+import type { Course } from '@/interface';
 import pyramidLime from '@/public/images/3d/pyramid-lime.png';
 import springBWhite from '@/public/images/3d/spring-b-white.png';
 import torusLime from '@/public/images/3d/torus-lime.png';
+import bigDataImage from '@/public/images/courses/big-data.jpg';
+import digitalAssetImage from '@/public/images/courses/digital-asset.jpg';
 import { cn } from '@/utils/cn';
 
 interface AuthShowcaseProps {
@@ -12,29 +14,46 @@ interface AuthShowcaseProps {
   className?: string;
 }
 
+const sampleCourse = {
+  creator: 'purepearl studio',
+  creatorSlug: 'purepearl-studio',
+  lessons: 17,
+  duration: '2 hours 16 mins',
+  comments: 59,
+  level: 'Beginner',
+  rating: 4.5,
+  enrolledCount: '26+',
+  price: 25,
+} as const;
+
+const digitalAsset: Course = {
+  ...sampleCourse,
+  slug: 'build-digital-asset',
+  title: 'Build Digital Asset',
+  image: digitalAssetImage,
+  topics: [],
+};
+
+const bigData: Course = {
+  ...sampleCourse,
+  slug: 'the-power-of-big-data',
+  title: 'the Power of Big Data',
+  image: bigDataImage,
+  topics: [],
+};
+
 const cardTweaks =
-  'absolute w-[373px] [&_h3]:leading-7 [&_h3+p]:leading-5 [&_li]:h-8 [&_li]:leading-5 [&_ul]:bottom-[13px]';
+  'absolute w-[373px] [&_a]:pointer-events-none [&_h3]:leading-7 [&_h3+p]:leading-5 [&_li]:h-8 [&_li]:leading-5 [&_ul]:bottom-[13px]';
 
 const AuthShowcase = ({ mutedRating = true, className }: AuthShowcaseProps) => {
-  const digitalAsset = getCourse('build-digital-asset');
-  const bigData = getCourse('the-power-of-big-data');
-
   return (
-    <div
-      aria-hidden="true"
-      inert
-      className={cn('pointer-events-none relative h-[585px] w-[548px] overflow-hidden', className)}
-    >
-      {digitalAsset && (
-        <CourseCard
-          course={digitalAsset}
-          featured
-          className={cn(cardTweaks, 'top-[89px] left-[25px]')}
-        />
-      )}
-      {bigData && (
-        <CourseCard course={bigData} featured className={cn(cardTweaks, 'top-0 left-[136px]')} />
-      )}
+    <div className={cn('relative h-[585px] w-[548px] overflow-hidden', className)}>
+      <CourseCard
+        course={digitalAsset}
+        featured
+        className={cn(cardTweaks, 'top-[89px] left-[25px]')}
+      />
+      <CourseCard course={bigData} featured className={cn(cardTweaks, 'top-0 left-[136px]')} />
       <HappyStudentsCard
         compact
         className={cn(

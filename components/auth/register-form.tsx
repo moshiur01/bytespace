@@ -3,9 +3,10 @@
 import TextReveal from '@/components/animation/text-reveal';
 
 import FormField from '@/components/auth/form-field';
+import PasswordField from '@/components/auth/password-field';
 import ButtonLime from '@/components/shared/ui/button/button-lime';
 import Link from 'next/link';
-import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { useState, type ChangeEvent, type SubmitEvent } from 'react';
 
 const RegisterForm = () => {
   const [values, setValues] = useState({ name: '', email: '', password: '' });
@@ -15,13 +16,13 @@ const RegisterForm = () => {
     setValues((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
   };
 
   return (
-    <div className="flex flex-col">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-10">
+    <div className="space-y-12 xl:space-y-[122px]">
+      <form onSubmit={handleSubmit} className="space-y-10">
         <div>
           <p className="text-body-l text-primary-800">Create an Account</p>
           <TextReveal delay={0.3}>
@@ -30,7 +31,7 @@ const RegisterForm = () => {
             </h1>
           </TextReveal>
         </div>
-        <div className="flex flex-col items-end gap-6">
+        <div className="space-y-6">
           <FormField
             id="register-name"
             label="Full Name"
@@ -53,10 +54,9 @@ const RegisterForm = () => {
             onChange={handleChange}
             required
           />
-          <FormField
+          <PasswordField
             id="register-password"
             label="Password"
-            type="password"
             name="password"
             autoComplete="new-password"
             placeholder="********"
@@ -68,9 +68,9 @@ const RegisterForm = () => {
         </div>
       </form>
 
-      <p className="text-body-m text-shuttle-700 mt-12 flex flex-wrap justify-center gap-1 xl:mt-[122px]">
+      <p className="text-body-m text-shuttle-700 flex flex-wrap justify-center gap-1">
         Already have an account?
-        <Link href="/login" className="text-primary-800 hover:underline">
+        <Link href="/login" className="text-primary-800 hover-underline">
           Login
         </Link>
       </p>

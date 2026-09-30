@@ -7,13 +7,13 @@ const providers = [
 
 const SocialButtons = () => {
   return (
-    <div className="flex flex-col items-center gap-10">
-      <div className="flex w-full items-center gap-[11px]">
+    <div className="space-y-10">
+      <div className="flex w-full items-center justify-center gap-[11px]">
         <span className="h-px max-w-[200px] flex-1 bg-neutral-200" />
         <span className="text-body-l text-neutral-400">or</span>
         <span className="h-px max-w-[200px] flex-1 bg-neutral-200" />
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-center gap-4">
         {providers.map(({ label, icon: Icon }) => (
           <button
             key={label}
