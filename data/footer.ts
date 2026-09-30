@@ -8,7 +8,6 @@ export const footerLegal =
 
 export const footerColumns: FooterColumn[] = [
   {
-    title: 'Browse',
     links: [
       { label: 'Featured Courses', href: '/courses' },
       { label: 'Featured Categories', href: '/courses' },
@@ -27,7 +26,6 @@ export const footerColumns: FooterColumn[] = [
     ],
   },
   {
-    title: 'Platform',
     links: [
       { label: 'Become a Creator', href: '/register' },
       { label: 'Affiliate Program', href: '#' },
@@ -37,8 +35,6 @@ export const footerColumns: FooterColumn[] = [
     ],
   },
 ];
-
-export const footerCopyright = '@ 2023 ByteSpace. All rights reserved.';
 
 export const footerLegalLinks: NavLink[] = [
   { label: 'Privacy Policy', href: '#' },

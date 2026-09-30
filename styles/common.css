@@ -38,6 +38,23 @@
     drop-shadow(35px 50px 50px rgb(0 0 0 / 0.16));
 }
 
+/* Underline sweeps in from the left on hover, out to the right on leave (inline elements) */
+@utility hover-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 0% 1px;
+  transition:
+    background-size 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-position: left bottom;
+    background-size: 100% 1px;
+  }
+}
+
 /* Roll link: label rolls up to a duplicate on hover, underline sweeps in (see RollLink) */
 .roll-link {
   --roll-gap: 10px;
