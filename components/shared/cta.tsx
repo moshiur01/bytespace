@@ -1,5 +1,5 @@
-import TextReveal from '@/components/animation/text-reveal';
 import RevealAnimation from '@/components/animation/reveal-animation';
+import TextReveal from '@/components/animation/text-reveal';
 import Ornament from '@/components/shared/ornament';
 import ButtonLime from '@/components/shared/ui/button/button-lime';
 import coneWhite from '@/public/images/3d/cone-white.png';
@@ -13,14 +13,14 @@ import torusLime from '@/public/images/3d/torus-lime.png';
 const Cta = () => {
   return (
     <section className="bg-grid-lines bg-primary-800 relative overflow-hidden lg:h-[488px]">
-      <div className="main-container relative flex flex-col items-center gap-10 py-20 text-center lg:pt-[85px] lg:pb-0">
+      <div className="main-container relative space-y-10 py-20 text-center lg:pt-[85px] lg:pb-0">
         <TextReveal>
-          <h2 className="text-shuttle-50 sm:text-heading-m max-w-[710px] text-[32px] leading-[1.2] tracking-[-0.01em]">
+          <h2 className="text-shuttle-50 sm:text-heading-m mx-auto max-w-[710px] text-[32px] leading-[1.2] tracking-[-0.01em]">
             Unlock Your Potential as a Creator with ByteSpace
           </h2>
         </TextReveal>
         <RevealAnimation delay={0.2}>
-          <p className="text-body-m text-shuttle-50 sm:text-body-l max-w-[964px]">
+          <p className="text-body-m text-shuttle-50 sm:text-body-l mx-auto max-w-[964px]">
             Experience the collaboration of numerous creators and an expanding selection of courses.
             Register now and become a part of a community comprising over 10,000 local and
             international creators. Utilize our Course Editor, and showcase your expertise by
