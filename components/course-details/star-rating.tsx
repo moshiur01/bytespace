@@ -6,7 +6,6 @@ interface StarRatingProps {
   className?: string;
 }
 
-/** Five 24px star_rate/Filled glyphs, 4px apart; unearned stars are dimmed */
 const StarRating = ({ rating, className }: StarRatingProps) => {
   return (
     <span

@@ -4,7 +4,6 @@ export const DEFAULT_URL = 'https://bytespace-next.vercel.app/';
 export const DEFAULT_TITLE = 'ByteSpace || Online Courses';
 export const DEFAULT_DESCRIPTION =
   'Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.';
-/** 1200x630 social preview, served from /public */
 export const DEFAULT_IMAGE = {
   url: '/og-image.png',
   width: 1200,
@@ -36,10 +35,6 @@ const defaultMetadata: Metadata = {
   },
 };
 
-/**
- * Page metadata on top of the site defaults.
- * @param path route path (e.g. '/courses'), resolved against the site URL for canonical + og:url
- */
 const generateMetadata = (title?: string, description?: string, path = '/'): Metadata => {
   const pageTitle = title ?? DEFAULT_TITLE;
   const pageDescription = description ?? DEFAULT_DESCRIPTION;

@@ -20,7 +20,6 @@ const RevenuePill = () => (
   </span>
 );
 
-/** Growth section, row 2: creator revenue collage beside the create & manage copy + perks */
 const CreateCourses = () => {
   return (
     <div className="flex flex-col-reverse items-center gap-16 lg:flex-row lg:gap-[79px]">

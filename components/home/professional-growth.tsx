@@ -15,7 +15,6 @@ const stats: Stat[] = [
   { value: '16', label: 'Creators' },
 ];
 
-/** Growth section, row 1: professional growth copy + stats beside the student collage */
 const ProfessionalGrowth = () => {
   return (
     <div className="flex flex-col items-center gap-16 lg:flex-row lg:gap-[63px]">

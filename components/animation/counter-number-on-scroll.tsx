@@ -1,11 +1,11 @@
 'use client';
 
+import { cn } from '@/utils/cn';
 import { useRender } from '@base-ui/react/use-render';
 import { useGSAP } from '@gsap/react';
 import NumberFlow, { type Format } from '@number-flow/react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { cn } from '@/utils/cn';
 import { type ComponentPropsWithoutRef, type ReactElement, useRef, useState } from 'react';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -13,18 +13,14 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 interface CounterNumberOnScrollProps extends ComponentPropsWithoutRef<'span'> {
   value: number;
   delay?: number;
-  /** seconds */
   duration?: number;
-  /** play on mount instead of on scroll */
   instant?: boolean;
   format?: Format;
   prefix?: string;
   suffix?: string;
-  /** element to render instead of the default <span> (Base UI render prop) */
   render?: ReactElement;
 }
 
-/** Counts up from 0 to `value` once the element scrolls into view. */
 const CounterNumberOnScroll = ({
   value,
   delay = 0,
@@ -63,7 +59,6 @@ const CounterNumberOnScroll = ({
     props: {
       'data-counter-trigger': '',
       ...props,
-      // NumberFlow pads its digits for the roll mask; clamp to one line so layout matches plain text
       className: cn('inline-flex h-[1lh] items-center', className),
       children: (
         <NumberFlow

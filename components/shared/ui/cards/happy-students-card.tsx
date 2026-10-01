@@ -6,7 +6,6 @@ import { cn } from '@/utils/cn';
 
 interface HappyStudentsCardProps {
   className?: string;
-  /** Rating line text size: 12px (hero) or 10px (compact) */
   compact?: boolean;
   starClassName?: string;
   countClassName?: string;

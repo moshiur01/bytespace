@@ -2,7 +2,6 @@ import { courses } from '@/data/courses';
 import type { Course, CourseLevel } from '@/interface';
 
 export interface SearchCourse extends Course {
-  /** Unique listing id (the catalogue repeats the six demo courses) */
   id: string;
   category: string;
 }
@@ -17,7 +16,6 @@ export interface PriceFilter {
   label: string;
 }
 
-/** Category tabs row (Tab_Categories) */
 export const searchCategories = [
   'Featured',
   'Music',
@@ -57,13 +55,11 @@ export const searchScopes = ['Courses', 'Creators'] as const;
 export const COURSES_PER_PAGE = 9;
 
 const TOTAL_COURSES = 90;
-/** The first 18 results mirror the design: the six demo courses three times, all Beginner */
 const DESIGN_COURSES = 18;
 
 const topicCategories = searchCategories.slice(1);
 const extraLevels: CourseLevel[] = ['Beginner', 'Intermediate', 'Advanced'];
 
-/** 90 results; after the design set, later results vary level and rating. */
 export const searchCourses: SearchCourse[] = Array.from(
   { length: TOTAL_COURSES },
   (_, i) => {

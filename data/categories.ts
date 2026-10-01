@@ -8,7 +8,6 @@ import {
 } from '@/components/shared/icon';
 import type { CategoryCard } from '@/interface';
 
-/** Topic pills; the first one shows every course */
 export const topics: string[] = [
   'Featured',
   'Music',

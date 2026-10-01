@@ -6,7 +6,6 @@ import { useState, type ComponentProps } from 'react';
 
 type PasswordFieldProps = Omit<ComponentProps<typeof FormField>, 'type' | 'trailing'>;
 
-/** FormField with an eye button that shows or hides the password */
 const PasswordField = (props: PasswordFieldProps) => {
   const [visible, setVisible] = useState(false);
   const Icon = visible ? VisibilityOffIcon : VisibilityIcon;

@@ -5,7 +5,6 @@ import type { ReactNode } from 'react';
 interface AvatarStackProps {
   avatars: StaticImageData[];
   count: ReactNode;
-  /** 32px (course cards) or 43px (happy students cards) */
   size?: 'sm' | 'lg';
   countClassName?: string;
   className?: string;

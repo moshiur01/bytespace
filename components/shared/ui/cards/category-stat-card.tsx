@@ -8,7 +8,6 @@ interface CategoryStatCardProps {
   className?: string;
 }
 
-/** Floating "UI/UX Design · 200 Courses · 1000+ Students" card */
 const CategoryStatCard = ({ title, courses, students, className }: CategoryStatCardProps) => {
   return (
     <div

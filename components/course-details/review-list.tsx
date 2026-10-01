@@ -11,7 +11,6 @@ import { useState } from 'react';
 const pill =
   'flex cursor-pointer items-center justify-center gap-1 rounded-3xl px-4 py-3 text-label-m font-medium transition-colors duration-300';
 
-/** "Individual Reviews" filter pills + the filtered review cards */
 const ReviewList = () => {
   const [filter, setFilter] = useState<number | null>(null);
   const reviews =

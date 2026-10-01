@@ -9,8 +9,6 @@ import avatar7 from '@/public/images/avatars/avatar-7.png';
 import avatar8 from '@/public/images/avatars/avatar-8.png';
 import avatar9 from '@/public/images/avatars/avatar-9.png';
 
-/** Seven faces used on the "Happy Students" cards */
 export const happyStudentAvatars = [avatar1, avatar2, avatar3, avatar4, avatar5, avatar6, avatar7];
 
-/** Four faces used on course cards */
 export const courseCardAvatars = [avatar2, avatar8, avatar9, avatar10];

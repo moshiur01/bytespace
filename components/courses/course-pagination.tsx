@@ -12,7 +12,6 @@ const arrow =
 
 const numberText = 'font-poppins h-12 text-xl leading-7 font-semibold tracking-[-0.01em]';
 
-/** First, last and the pages around the current one; gaps become an ellipsis */
 const getPageItems = (page: number, totalPages: number): (number | 'gap')[] => {
   if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
 

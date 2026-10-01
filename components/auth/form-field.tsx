@@ -4,7 +4,6 @@ import type { ComponentProps, ReactNode } from 'react';
 interface FormFieldProps extends Omit<ComponentProps<'input'>, 'className' | 'id'> {
   id: string;
   label: string;
-  /** Control shown inside the input on the right, e.g. a show-password toggle */
   trailing?: ReactNode;
 }
 

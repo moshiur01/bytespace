@@ -6,7 +6,6 @@ import type { ReactNode } from 'react';
 interface SectionHeadingProps {
   title: ReactNode;
   description: ReactNode;
-  /** 44px (Heading M) or 36px (Heading S) title */
   size?: 'm' | 's';
   titleClassName?: string;
   className?: string;

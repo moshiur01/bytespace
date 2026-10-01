@@ -4,9 +4,7 @@ import { cn } from '@/utils/cn';
 
 interface LearningProgressCardProps {
   className?: string;
-  /** Label line-height: 1.2 (hero) or 24px (showcase) */
   relaxed?: boolean;
-  /** 0–100 */
   progress?: number;
 }
 

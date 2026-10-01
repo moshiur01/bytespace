@@ -12,7 +12,6 @@ gsap.registerPlugin(SplitText, ScrollTrigger, CustomEase, useGSAP);
 CustomEase.create('bouncy-ease', '0.34, 1.42, 0.64, 1');
 
 interface TextRevealProps extends Omit<ComponentPropsWithoutRef<'div'>, 'children'> {
-  /** Render the child element itself (Slot behaviour). Set false to wrap in a div. */
   asChild?: boolean;
   children: ReactElement | ReactElement[] | string;
   duration?: number;
@@ -20,7 +19,6 @@ interface TextRevealProps extends Omit<ComponentPropsWithoutRef<'div'>, 'childre
   start?: string;
 }
 
-/** Masked line-by-line heading reveal (SplitText lines rise from 110% with a bouncy ease). */
 const TextReveal = ({
   asChild = true,
   children,

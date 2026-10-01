@@ -1,19 +1,16 @@
 import { cn } from '@/utils/cn';
 
 interface GlowProps {
-  /** position/size on the artboard, in px */
   x: number;
   y: number;
   size: number;
   color: 'blue' | 'lime';
-  /** paint opacity from the design (0–1) */
   strength: number;
   className?: string;
 }
 
 const rgb = { blue: '0 59 226', lime: '203 252 1' };
 
-/** Soft radial colour glow (Figma radial gradient + 40px layer blur) */
 const Glow = ({ x, y, size, color, strength, className }: GlowProps) => {
   const c = rgb[color];
   const a = (v: number) => `rgb(${c} / ${(v * strength).toFixed(4)})`;

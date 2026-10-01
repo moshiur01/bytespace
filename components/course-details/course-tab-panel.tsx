@@ -4,12 +4,10 @@ import type { ReactNode } from 'react';
 
 interface CourseTabPanelProps {
   slug: string;
-  /** Per-tab vertical spacing (the Figma frames differ slightly) */
   className?: string;
   children: ReactNode;
 }
 
-/** Left column below the course header: tab nav + the active tab's content */
 const CourseTabPanel = ({ slug, className, children }: CourseTabPanelProps) => {
   return (
     <div className="main-container">

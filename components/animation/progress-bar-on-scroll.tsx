@@ -9,7 +9,6 @@ import { useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 interface ProgressBarOnScrollProps {
-  /** 0–100 */
   value: number;
   delay?: number;
   duration?: number;
@@ -17,7 +16,6 @@ interface ProgressBarOnScrollProps {
   trackClassName?: string;
 }
 
-/** Progress bar whose fill grows to `value`% when it scrolls into view. */
 const ProgressBarOnScroll = ({
   value,
   delay = 0,
@@ -46,15 +44,14 @@ const ProgressBarOnScroll = ({
   return (
     <div
       ref={trackRef}
-      role="progressbar"
       aria-valuenow={value}
       aria-valuemin={0}
       aria-valuemax={100}
-      className={cn('h-2 w-full shrink-0 overflow-hidden rounded-3xl bg-surface-2', trackClassName)}
+      className={cn('bg-surface-2 h-2 w-full shrink-0 overflow-hidden rounded-3xl', trackClassName)}
     >
       <div
         ref={fillRef}
-        className={cn('h-full rounded-3xl bg-accent-400', className)}
+        className={cn('bg-accent-400 h-full rounded-3xl', className)}
         style={{ width: `${value}%` }}
       />
     </div>

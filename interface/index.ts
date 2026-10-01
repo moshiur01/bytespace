@@ -28,7 +28,6 @@ export interface Course {
   rating: number;
   enrolledCount: string;
   price: number;
-  /** topic pills this course is listed under */
   topics: string[];
 }
 

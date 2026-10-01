@@ -8,7 +8,6 @@ interface CourseVideoProps {
   className?: string;
 }
 
-/** 720x479 preview frame; the 3:2 still is FIT into it (= cover at this aspect) */
 const CourseVideo = ({ title, className }: CourseVideoProps) => {
   return (
     <div

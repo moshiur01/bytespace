@@ -11,11 +11,8 @@ import related3 from '@/public/images/courses/related-3.jpg';
 import related4 from '@/public/images/courses/related-4.jpg';
 import type { StaticImageData } from 'next/image';
 
-/* ---------- page-local types ---------- */
-
 export interface CourseTab {
   label: string;
-  /** Path segment after /courses/[slug] ('' = About) */
   segment: '' | 'lessons' | 'reviews';
 }
 
@@ -38,7 +35,6 @@ export interface CourseModule {
 export interface RatingBreakdownRow {
   stars: number;
   count: number;
-  /** Filled share of the bar, 0-1 (as drawn in the design) */
   fill: number;
 }
 
@@ -64,7 +60,6 @@ export const courseTabs: CourseTab[] = [
   { label: 'Reviews', segment: 'reviews' },
 ];
 
-/** Long-form titles shown in the course header (falls back to the course title) */
 const headlines: Partial<Record<string, string>> = {
   'build-digital-asset': 'Build Digital Asset: A Comprehensive Guide',
 };
@@ -173,7 +168,6 @@ export const lessonContent =
 export const lessonProgressText =
   'Witness your growth as you complete lessons, with an intuitive progress tracking feature guiding you through your learning journey.';
 
-/** Share of the course completed, 0-100 (bar fill in the design: 387 / 691px) */
 export const lessonProgress = 55;
 
 /* ---------- Reviews tab ---------- */

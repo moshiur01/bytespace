@@ -11,7 +11,6 @@ import { useEffect, useState } from 'react';
 
 const FEATURED = topics[0];
 
-/** Topic pills that filter the course grid below them */
 const CourseFilter = () => {
   const [active, setActive] = useState(FEATURED);
   // after the first pick, new cards animate in immediately instead of on scroll

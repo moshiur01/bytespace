@@ -13,12 +13,9 @@ interface RevealAnimationProps extends Omit<ComponentPropsWithoutRef<'div'>, 'ch
   children: ReactElement | ReactElement[];
   duration?: number;
   delay?: number;
-  /** travel distance in px */
   offset?: number;
-  /** play on mount instead of on scroll */
   instant?: boolean;
   start?: string;
-  /** direction the element travels from */
   direction?: 'up' | 'down' | 'left' | 'right';
   blur?: number;
 }

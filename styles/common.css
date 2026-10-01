@@ -2,7 +2,6 @@
   @apply box-border;
 }
 
-/* Hidden until GSAP reveals them (FOUC guard) */
 [data-ns-animate],
 [data-text-reveal] {
   opacity: 0;
@@ -15,7 +14,6 @@
   }
 }
 
-/* SplitText line masks: keep descenders inside the clip */
 [data-text-reveal] .line-mask {
   margin-bottom: -0.12em;
   padding-bottom: 0.12em;
@@ -38,7 +36,6 @@
     drop-shadow(35px 50px 50px rgb(0 0 0 / 0.16));
 }
 
-/* Underline sweeps in from the left on hover, out to the right on leave (inline elements) */
 @utility hover-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
@@ -55,12 +52,10 @@
   }
 }
 
-/* Dot label: on parent hover a dot slides in from the left and the chars shift right to make
-   room (see DotLabel). Chars stagger from the last on hover, from the first on hover out. */
 .dot-label {
   --dot-size: 6px;
   --dot-gap: 8px;
-  /* half the dot + gap, so dot and text stay centred together */
+
   --dot-shift: calc((var(--dot-size) + var(--dot-gap)) / 2);
   --char-stagger: 0.02s;
   --dot-ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -124,7 +119,6 @@
   }
 }
 
-/* Roll link: label rolls up to a duplicate on hover, underline sweeps in (see RollLink) */
 .roll-link {
   --roll-gap: 10px;
   --roll-duration: 0.6s;
@@ -133,7 +127,6 @@
   align-items: center;
 }
 
-/* Anchors the underline to the text, whatever the link's height */
 .roll-link__inner {
   position: relative;
   display: block;
