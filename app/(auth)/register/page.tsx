@@ -7,7 +7,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = generateMetadata(
   'Create an Account || ByteSpace',
-  'Join ByteSpace for free and get access to hundreds of courses.'
+  'Join ByteSpace for free and get access to hundreds of courses.',
+  '/register'
 );
 
 const Page = () => {

@@ -14,7 +14,8 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   if (!course) return buildMetadata();
   return buildMetadata(
     `Lessons: ${getCourseHeadline(course)} || ByteSpace`,
-    'Explore the modules, lesson content and progress tracking of this course.'
+    'Explore the modules, lesson content and progress tracking of this course.',
+    `/courses/${course.slug}/lessons`
   );
 };
 

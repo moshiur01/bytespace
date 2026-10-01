@@ -16,7 +16,11 @@ export const generateStaticParams = () => creators.map((creator) => ({ slug: cre
 export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
   const creator = getCreator((await params).slug);
   if (!creator) return buildMetadata();
-  return buildMetadata(`${creator.name} || ByteSpace Creator`, creator.bio[0]);
+  return buildMetadata(
+    `${creator.name} || ByteSpace Creator`,
+    creator.bio[0],
+    `/creators/${creator.slug}`
+  );
 };
 
 const Page = async ({ params }: PageProps) => {
