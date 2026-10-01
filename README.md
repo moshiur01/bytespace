@@ -1,4 +1,4 @@
-# ByteSpace — Doin tech Jr Software Engineer task
+# ByteSpace — Doin tech Jr Software Engineer (Frontend) task
 
 # Live link
 
