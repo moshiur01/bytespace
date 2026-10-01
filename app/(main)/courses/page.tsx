@@ -3,10 +3,11 @@ import SearchHero from '@/components/courses/search-hero';
 import { generateMetadata } from '@/utils/generateMetaData';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  ...generateMetadata(),
-  title: 'ByteSpace || Find Your Next Course',
-};
+export const metadata: Metadata = generateMetadata(
+  'ByteSpace || Find Your Next Course',
+  'Search hundreds of courses by topic, level and price, from design and development to marketing and photography.',
+  '/courses'
+);
 
 interface PageProps {
   searchParams: Promise<{ q?: string | string[] }>;

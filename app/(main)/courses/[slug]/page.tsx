@@ -14,7 +14,8 @@ export const generateMetadata = async ({ params }: PageProps): Promise<Metadata>
   if (!course) return buildMetadata();
   return buildMetadata(
     `${getCourseHeadline(course)} || ByteSpace`,
-    'Build digital assets with expert guidance: course description, sneak peek and key points.'
+    'Build digital assets with expert guidance: course description, sneak peek and key points.',
+    `/courses/${course.slug}`
   );
 };
 

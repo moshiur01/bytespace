@@ -7,7 +7,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = generateMetadata(
   'Sign In || ByteSpace',
-  'Sign in to ByteSpace and pick up your courses right where you left off.'
+  'Sign in to ByteSpace and pick up your courses right where you left off.',
+  '/login'
 );
 
 const Page = () => {

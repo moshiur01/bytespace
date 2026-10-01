@@ -8,10 +8,7 @@ import Cta from '@/components/shared/cta';
 import { generateMetadata } from '@/utils/generateMetaData';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  ...generateMetadata(),
-  title: 'ByteSpace || Online Courses',
-};
+export const metadata: Metadata = generateMetadata();
 
 const Page = () => {
   return (
